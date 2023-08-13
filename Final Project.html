@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>Gym.com</title>
+<script>
+function response_rec(form){
+ if(form.username.value==""){
+   alert("Please fill out the data");
+   form.username.focus();
+   return false;
+ }
+ if(form.pwd.value==""){
+   alert("Please fill out the data");
+   form.pwd.focus();
+   return false;
+ }
+ if(form.pwd1.value==""){
+   alert("Please fill out the data");
+   form.username.focus();
+   return false;
+ }
+ if(form.pwd.value != form.pwd1.value){
+  alert("Error Passwords dont match");
+  form.pwd.focus();
+  return false;
+ }
+ return true;
+}
+function changecolor(inputID){
+var inputElement=document.getElementById(inputID);
+inputElement.classList.add("greybg");
+}
+function restorecolor(inputID){
+var inputElement=document.getElementById(inputID);
+inputElement.classList.remove("greybg");
+}
+
+</script>
+</head>
+<style>
+.greybg{
+background-color:gray;
+}
+body{
+background-color: lightsalmon;
+}
+h1{
+font-size:50px;
+text-align:center;
+background-color:papayawhip;
+font-family:"Georgia","Garamond",Serif;
+}
+h2{
+font-size:35px;
+}
+
+p{
+font-size:25px;
+font-family:
+}
+form{
+font-size:20px;
+}
+.mybutton{
+font-size:20px;
+}
+</style>
+
+<body >
+<h1 >Achieve Fit</h1>
+<p>"Welcome to AchieveFit, your ultimate fitness companion! Our sleek and intuitive app offers a seamless fitness journey, allowing you to effortlessly record and track your workouts, set personalized goals, and witness your progress unfold in real-time. With a visually captivating interface and expertly crafted workout routines,<strong>AchieveFit</strong> transforms fitness into an exciting adventure towards your healthiest self. Join us today and embark on a rewarding path to your fitness achievements!"</p>
+<img src="gym2.jpg" width="465" height="300">
+<img src="Gym3.jpg" width="465" height="300">
+<img src="gym.jpg" width="465" height="300"><br><br>
+<form method="post" action="response.html" onsubmit="return response_rec(this)">
+<label for="Name"><strong>Name:</strong></label>
+<input type="text" id="Name" name="Name" onfocus="changecolor('Name')" onblur="restorecolor('Name')">
+<label for="Age"><strong>Age:</strong></label>
+<input type="number" id="Age" name="Age" onfocus="changecolor('Age')" onblur="restorecolor('Age')">
+<strong>Select Gender</strong>:
+<label for="male">Male</label>
+<input type="radio" id="male" name="gender">
+<label for="female">Female</label>
+<input type="radio" id="female" name="gender">
+<label for="others">Others</label>
+<input type="radio" id="others" name="gender"><br><br>
+<label for="weight"><strong>Weight(in Kg):</strong></label>
+<input type="number" id="weight" name="weight" onfocus="changecolor('weight')" onblur="restorecolor('weight')">
+<label for="height"><strong>Height(in cm):</strong></label>
+<input type="number" id="height" name="height" onfocus="changecolor('height')" onblur="restorecolor('height')"><br><br>
+<strong>Workout Routines</strong>:
+<label for="cardio">Cardio:</label>
+<input type="checkbox" id="cardio" name="cardio" value="CARDIO">
+<label for="weightl">Weightlifting</label>
+<input type="checkbox" id="weightl" name="weightl" value="Weightl">
+<label for="yoga">Yoga:</label>
+<input type="checkbox" id="yoga" name="yoga" value="YOGA">
+<label for="cycling">Cycling:</label>
+<input type="checkbox" id="cycling" name="cycling" value="CYCLING">
+<label for="swim">Swimming:</label>
+<input type="checkbox" id="swim" name="swim" value="Swim">
+<label for="dance">Dance:</label>
+<input type="checkbox" id="dance" name="dance" value="DANCE">
+<label for="hike">Hiking:</label>
+<input type="checkbox" id="hike" name="hike" value="Hike">
+<label for="none">None:</label>
+<input type="checkbox" id="none" name="none" value="NONE"><br><br>
+<label for="wtime"><strong>How much time you workout daily(in mins)?</strong></label>
+0
+<input type="range" id="wtime" name="wtime" min="0" max="120" value="45">
+120<br><br>
+<label for="goal"><strong>What is your Fitness goal</strong></label>
+<select id="goal" name="goal">
+    <option value="weigh">Weight Loss</option>
+    <option value="muscle">Muscle Gain</option>
+    <option value="weightt">Weight Gain</option>
+    <option value="overall">Overall Fitness</option>
+    <option value="cardioo">CardioVascular Health</option>
+    <option value="core">Core Strength</option>
+</select>
+<h2>Register With Us</h2>
+<label for="username"><strong>UserName:</strong></label>
+<input type="text" id="username" name="username" required onfocus="changecolor('username')" onblur="restorecolor('username')"><br><br>
+<label for="pwd"><strong>Create Password:</strong></label>
+<input type="password" id="pwd" name="pwd" required onfocus="changecolor('pwd')" onblur="restorecolor('pwd')"><br><br>
+<label for="pwd1"><strong>Confirm Password:</strong></label>
+<input type="password" id="pwd1" name="pwd1" required onfocus="changecolor('pwd1')" onblur="restorecolor('pwd1')"><br><br>
+<input type="submit" class="mybutton" value="Register">
+<input type="reset" class="mybutton">
+
+</form>
+</body>
+</html>
